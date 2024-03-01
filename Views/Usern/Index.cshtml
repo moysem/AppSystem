@@ -1,0 +1,37 @@
+@model IEnumerable<Usern>;
+
+
+<h2>User List</h2>
+<div><input onclick="location.href='Usern/CreateUser'" type="submit" value="CreateUser" class="btn btn-primary" />
+</div>
+<div class="row">
+    <div class="form-group">
+        <div style="overflow-y:scroll; overflow-x:hidden; height:400px;">
+           
+                <div class="col-lg-4 col-md-4">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Password</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                             @foreach (var users in Model)
+            {
+                            <tr>
+                                <td>@users.UserId</td>
+                                <td>@users.UserName</td>
+                                <td>@users.Passwrd</td>
+                            </tr>
+            }
+            
+                        </tbody>
+                    </table>
+                </div>
+           
+        </div>
+    </div>
+</div>
